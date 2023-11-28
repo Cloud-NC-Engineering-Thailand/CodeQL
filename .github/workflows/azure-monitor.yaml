@@ -1,0 +1,17 @@
+name: Azure Monitor
+
+on: [push]
+
+jobs:
+  azure-monitor:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Azure Monitor
+      uses: azure/actions/monitor@v1
+      with:
+        log-analytics-workspace-id: ${{ secrets.AZURE_MONITOR_LOG_ANALYTICS_WORKSPACE_ID }}
+        log-analytics-shared-key: ${{ secrets.AZURE_MONITOR_LOG_ANALYTICS_SHARED_KEY }}
+        log-type: 'GitHubActions'
