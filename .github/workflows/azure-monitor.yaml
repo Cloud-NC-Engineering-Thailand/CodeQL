@@ -1,17 +1,17 @@
-name: Azure Monitor
+# name: Azure Monitor
 
-on: [push]
+# on: [push]
 
-jobs:
-  azure-monitor:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+# jobs:
+#   azure-monitor:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout repository
+#       uses: actions/checkout@v2
 
-    - name: Send Log to Azure Monitor
-      uses: hoisjp/azure-monitor-action@v0.1
-      with:
-        workspace-id: ${{ secrets.AZURE_MONITOR_LOG_ANALYTICS_WORKSPACE_ID }}
-        agent-key: ${{ secrets.AZURE_MONITOR_LOG_ANALYTICS_SHARED_KEY }}
-        json-body: '{message: "Unit Test Finished.", youCanGiveAnyFieldName: true}' 
+#     - name: Send Log to Azure Monitor
+#       uses: hoisjp/azure-monitor-action@v0.1
+#       with:
+#         workspace-id: ${{ secrets.AZURE_MONITOR_LOG_ANALYTICS_WORKSPACE_ID }}
+#         agent-key: ${{ secrets.AZURE_MONITOR_LOG_ANALYTICS_SHARED_KEY }}
+#         json-body: '{message: "Unit Test Finished.", youCanGiveAnyFieldName: true}' 
